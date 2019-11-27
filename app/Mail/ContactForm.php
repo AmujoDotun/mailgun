@@ -2,28 +2,26 @@
 
 namespace App\Mail;
 
-
-use App\Order;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class OrderShipped extends Mailable
+class ContactForm extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $order;
+    public $data;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(Order $order)
+    public function __construct($data)
     {
         //
-        $this->order = $order;
+        $this->data =$data;
     }
 
     /**
@@ -33,10 +31,6 @@ class OrderShipped extends Mailable
      */
     public function build()
     {
-
-        return $this->view('emails.orders.shipped');
-        // return $this->view('view.name');
-        // return $this->from('samuelamujo@gmail.com')
-        //         ->view('emails.orders.shipped');
+        return $this->markdown('emails.pages.contact-form');
     }
 }
