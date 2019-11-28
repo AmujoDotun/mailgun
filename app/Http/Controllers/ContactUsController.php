@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactForm;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactUsController extends Controller
 {
@@ -19,7 +21,7 @@ class ContactUsController extends Controller
          ]);
          // dd(request()->all());
  
-         Mail::to('samuelamujo@gmail.com')->send(new ContactFormMail($data));
+         Mail::to('samuelamujo@gmail.com')->send(new ContactForm($data));
  
          return redirect('pages.contact');
      }

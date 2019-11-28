@@ -8,7 +8,7 @@
 	<div class="row">
       <div class="col-md-6 col-md-offset-3">
         <div class="well well-sm">
-          <form class="form-horizontal" action="/contact-us" method="POST">
+          <form class="form-horizontal" action="/contact" method="POST">
           <fieldset>
             <legend class="text-center">Contact us</legend>
     
